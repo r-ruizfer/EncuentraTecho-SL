@@ -7,12 +7,11 @@
 */
 
 #root, body {
-  max-width: 1280px;
+ 
   margin: 0;
   padding: 0;
   text-align: center;
   color: #f2e9e4;
-  background-color: #c9ada7;
 }
 
 .nav-container {
@@ -21,11 +20,13 @@
   align-items: center;
   background-color: #9a8c98;
   padding: 0 30px;
+  
 }
 
 .search {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 
 .principal {
@@ -34,7 +35,9 @@
 
 .home-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  background-color: #c9ada7;
+
 }
 
 .sidebar-container {
@@ -43,6 +46,7 @@
   align-items: flex-end;
   padding: 0 30px;
   background-color: #4a4e69;
+  z-index: -1;
 }
 
 .sidebar-container ul {
@@ -55,7 +59,9 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: #9a8c98;
-  padding: 0 30px;
+  
+  width: 100%;
+  z-index: 1;
 }
 
 .social {

@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar.jsx'
 import Footer from './components/Footer.jsx'
 import './HomePage.css'
 
+
 function HomePage() {
 
   return (
@@ -13,7 +14,7 @@ function HomePage() {
         <Home />
         <Sidebar />
       </div>
-      <Footer />
+      
     </>
   )
 }

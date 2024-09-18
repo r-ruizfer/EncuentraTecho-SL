@@ -11,7 +11,7 @@ function Navbar() {
       <h3>Contacto</h3>
       <div className="search">
         <Icon src={GithubIcon} alt={"Lupa"}/>
-        <input type="text" placeholder="Buscar"></input>
+        <input style={{height:"30px", borderRadius: "10px", backgroundColor:"#f2e9e4"}} type="text" placeholder="Buscar"></input>
       </div>
     </div>
   )

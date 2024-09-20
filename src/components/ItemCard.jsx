@@ -1,12 +1,28 @@
 import React from "react";
-import casa from "../assets/pexels-photo-106399.jpeg";
 
 function ItemCard(props) {
   const {
-    id,
-    rental: { name, accommodates, bathrooms, bedrooms, city, country, price },
-    handleDelete,
+    index,
+    rentals,
+    setRentals,
+    rental: {
+      name,
+      accommodates,
+      bathrooms,
+      bedrooms,
+      city,
+      country,
+      price,
+      picture_url: { url },
+    },
   } = props;
+
+  function handleDelete(index) {
+    const clone = [...rentals];
+    clone.splice(index, 1);
+    setRentals(clone);
+  }
+
   const rentalCardsStyle = {
     display: "flex",
     alignItems: "center",
@@ -21,7 +37,7 @@ function ItemCard(props) {
   };
 
   return (
-    <div style={rentalCardsStyle} key={id}>
+    <div style={rentalCardsStyle}>
       <img
         style={{
           border: "5px solid #4a4e69",
@@ -29,7 +45,7 @@ function ItemCard(props) {
           width: "350px",
           height: "300px",
         }}
-        src={casa}
+        src={url}
         alt=" imagen rental"
       />
       <div>
@@ -50,7 +66,7 @@ function ItemCard(props) {
         <p>Price : {price}.000 €</p>
         <button
           onClick={() => {
-            handleDelete(id);
+            handleDelete(index);
           }}
         >
           Delete

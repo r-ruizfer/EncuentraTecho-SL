@@ -2,7 +2,7 @@ import TeamInfo from '../components/TeamInfo'
 
 function AboutPage() {
   return (
-    <div>
+    <div >
       <p>
         Admin dashboard for the apartment rental platform where the admin can
         see and manage the apartments shown on the platform.

@@ -9,8 +9,13 @@ function Navbar() {
       <Link to="/">
         <img style={{ width: '100px' }} src={Logo} alt="Logo" />
       </Link>
-      <h3>Pisos</h3>
+      <Link to="/add">
+        <h3>Añade tu casa</h3>
+      </Link>
+    
+      <Link to="/pagesRentals">
       <h3>Casas</h3>
+      </Link>
       <h3>Contacto</h3>
       <div className="search">
         <Icon src={GithubIcon} alt={'Lupa'} />

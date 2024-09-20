@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import rentalsData from '../assets/rentals.json'
-import List from '../components/List.jsx'
+
 
 function DashboardPage() {
-  const [rentals, setRentals] = useState(rentalsData.results)
-  console.log(rentals)
+  
+
   return (
     <div>
       <div className="home-container">
         <h1>Encuentra Techo SL</h1>
-        <List rentals={rentals} />
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, temporibus ducimus at officiis, expedita cum sapiente labore quia doloremque cupiditate cumque vel quos consequuntur nemo exercitationem quidem, ut hic. Totam.</p>
       </div>
     </div>
   )

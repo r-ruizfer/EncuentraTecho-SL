@@ -4,10 +4,36 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
       <Link to="/">
-        <button>Home</button>
+        <button
+          style={{
+            backgroundColor: ' #c9ada7',
+            padding: '5px',
+            borderRadius: '15px',
+            color: '#22223b',
+            border: 'none',
+            padding: '10px',
+            fontSize: '15px',
+            fontWeight: 'bold',
+          }}
+        >
+          Home
+        </button>
       </Link>
       <Link to="/about">
-        <button>About</button>
+        <button
+          style={{
+            backgroundColor: ' #c9ada7',
+            padding: '5px',
+            borderRadius: '15px',
+            color: '#22223b',
+            border: 'none',
+            padding: '10px',
+            fontSize: '15px',
+            fontWeight: 'bold',
+          }}
+        >
+          About
+        </button>
       </Link>
     </div>
   )

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Carousel from '../components/Carousel'
-import colageHauses from '../assets/collageHouses.png'
 
 function DashboardPage({ rentals }) {
   const title = () => {

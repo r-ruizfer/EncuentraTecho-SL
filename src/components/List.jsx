@@ -16,7 +16,13 @@ function List(props) {
       {rentals.map((rental, i) => (
         <>
           <Link to={`/pagesRentals/${rental.id}`}>
-            <ItemCard index={i} rentals={rentals} rental={rental} setRentals={setRentals} />
+            <ItemCard
+              key={i}
+              index={i}
+              rentals={rentals}
+              rental={rental}
+              setRentals={setRentals}
+            />
           </Link>
         </>
       ))}

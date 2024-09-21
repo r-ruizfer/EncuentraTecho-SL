@@ -14,24 +14,37 @@ import AddPage from './pages/AddApartment.jsx'
 import AddApartment from './pages/AddApartment.jsx'
 import UpdateApartment from './pages/UpdateApartment.jsx'
 
-
 function App() {
-
   const [rentals, setRentals] = useState(rentalsData.results)
 
   return (
     <>
       <Navbar />
-      <div className="principal" style={{display:'flex'}}>
+      <div className="principal" style={{ display: 'flex' }}>
         <Routes>
-          <Route path="/" element={<DashboardPage />} />
-          <Route path="/add" element={<AddApartment setRentals={setRentals} />} /> 
-          <Route path="/pagesRentals/:rentalId" element={<ItemDetailsPage rentals={rentals}/>} />
+          <Route path="/" element={<DashboardPage rentals={rentals} />} />
+          <Route
+            path="/add"
+            element={<AddApartment setRentals={setRentals} />}
+          />
+          <Route
+            path="/pagesRentals/:rentalId"
+            element={<ItemDetailsPage rentals={rentals} />}
+          />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/pagesRentals" element={<PageRentalList rentals={rentals} setRentals={setRentals} />} />
-          <Route path="/update/:rentalId" element={<UpdateApartment rentals={rentals} setRentals={setRentals}/>} />
+          <Route
+            path="/pagesRentals"
+            element={
+              <PageRentalList rentals={rentals} setRentals={setRentals} />
+            }
+          />
+          <Route
+            path="/update/:rentalId"
+            element={
+              <UpdateApartment rentals={rentals} setRentals={setRentals} />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
-          
         </Routes>
 
         <Sidebar />

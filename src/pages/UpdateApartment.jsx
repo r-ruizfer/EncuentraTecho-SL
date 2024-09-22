@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-
 function UpdateApartment({ rentals, setRentals }) {
-  const { rentalId } = useParams();
+  const { rentalId } = useParams()
 
-  const rentalToDisplay = rentals.find((rental) => rental.id === rentalId);
-  const [apartment, setApartment] = useState(rentalToDisplay);
+  const rentalToDisplay = rentals.find((rental) => rental.id === rentalId)
+  const [apartment, setApartment] = useState(rentalToDisplay)
 
   const handleChange = (event) =>
-    setApartment({ ...apartment, [event.target.name]: event.target.value });
+    setApartment({ ...apartment, [event.target.name]: event.target.value })
 
   const handleUpdateApartment = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const updatedApartment = {
       picture_url: { url: apartment.url },
@@ -27,15 +26,15 @@ function UpdateApartment({ rentals, setRentals }) {
       bathrooms: apartment.bathrooms,
       bedrooms: apartment.bedrooms,
       description: apartment.description,
-    };
+    }
 
-    setApartment(updatedApartment);
+    setApartment(updatedApartment)
 
     const updatedRentals = rentals.map((rental) =>
       rental.id === apartment.id ? updatedApartment : rental
-    );
-    setRentals(updatedRentals);
-  };
+    )
+    setRentals(updatedRentals)
+  }
 
   return (
     <form onSubmit={handleUpdateApartment} className="formContainer">
@@ -44,9 +43,9 @@ function UpdateApartment({ rentals, setRentals }) {
       </Link>
 
       <div
-        style={{ display: "flex", backgroundColor: "#f2e9e4", height: "500px" }}
+        style={{ display: 'flex', backgroundColor: '#f2e9e4', height: '500px' }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <label>
             Price
             <input
@@ -98,7 +97,7 @@ function UpdateApartment({ rentals, setRentals }) {
           </label>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <label>
             Type
             <input
@@ -150,7 +149,7 @@ function UpdateApartment({ rentals, setRentals }) {
         ></textarea>
       </label>
     </form>
-  );
+  )
 }
 
-export default UpdateApartment;
+export default UpdateApartment

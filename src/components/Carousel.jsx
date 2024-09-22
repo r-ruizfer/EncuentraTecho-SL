@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Icon from './Icon'
 import flechaDerecha from '../assets/flecha-derecha.png'
 import flechaIzquierda from '../assets/flecha-izquierda.png'
+import { Link } from 'react-router-dom'
 function Carousel(props) {
   const { rentals } = props
   const [imageIndex, setImageIndex] = useState(0)
@@ -33,12 +34,16 @@ function Carousel(props) {
         <Icon src={flechaIzquierda} />
       </button>
       <div className="box-carousel">
-        <img
-          className="image-carousel"
-          key={rentals[imageIndex].id}
-          src={rentals[imageIndex].picture_url.url}
-          alt={`Imagen ${imageIndex}`}
-        />
+        {rentals.map((rental, i) => (
+          <Link to={`/pagesRentals/${rental.id}`}>
+            <img
+              className="image-carousel"
+              key={rentals[imageIndex].id}
+              src={rentals[imageIndex].picture_url.url}
+              alt={`Imagen ${imageIndex}`}
+            />
+          </Link>
+        ))}
       </div>
       <button onClick={handleRight}>
         <Icon src={flechaDerecha} />

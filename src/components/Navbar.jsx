@@ -10,15 +10,21 @@ function Navbar() {
         <div className="nav-menu">
           <div
             style={{
-              width: '100px',
+              width: '120px',
+              height: '120px',
               backgroundColor: ' #c9ada7',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <Link to="/">
-              <img style={{ width: '100px' }} src={Logo} alt="Logo" />
+              <img
+                style={{ width: '80%', height: 'auto', borderRadius: '50%' }}
+                src={Logo}
+                alt="Logo"
+              />
             </Link>
           </div>
           <Link style={{ textDecoration: 'none' }} to="/add">

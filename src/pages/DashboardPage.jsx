@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Carousel from '../components/Carousel'
+import { Link } from 'react-router-dom'
 
 function DashboardPage({ rentals }) {
   const title = () => {
@@ -72,6 +73,7 @@ function DashboardPage({ rentals }) {
       </div>
 
       <Carousel rentals={rentals} />
+
       <h2>¡Únete a la locura de encontrar tu techo perfecto!</h2>
       <p style={{ fontSize: '20px', margin: '10px 20px' }}>
         En Encuentra Techo con Casa Locas, no solo buscamos casas, ¡buscamos

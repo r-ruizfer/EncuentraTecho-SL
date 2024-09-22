@@ -34,7 +34,7 @@ function ItemDetailsPage({ rentals }) {
     <div className="container-details">
       <div>
         <img
-          style={{ width: '1000px', marginTop: '50px' }}
+          style={{ width: '1000px', marginTop: '50px', borderRadius: '15px' }}
           src={rentalToDisplay.picture_url.url}
           alt=""
         />
@@ -57,7 +57,6 @@ function ItemDetailsPage({ rentals }) {
             <button
               style={{
                 backgroundColor: '#22223b',
-                padding: '5px',
                 borderRadius: '15px',
                 color: '#9a8c98',
                 border: 'none',
@@ -66,7 +65,6 @@ function ItemDetailsPage({ rentals }) {
                 fontWeight: 'bold',
                 margin: '20px',
                 width: '100px',
-                fontSize: '15px',
               }}
               onClick={openModal}
             >
@@ -74,7 +72,7 @@ function ItemDetailsPage({ rentals }) {
             </button>
           </div>
         </div>
-        <div style={{ width: '50%' }}>
+        <div className="description-box">
           <p>Descipcion:{rentalToDisplay.description}</p>
         </div>
 
@@ -96,12 +94,10 @@ function ItemDetailsPage({ rentals }) {
         <button
           style={{
             backgroundColor: ' #c9ada7',
-            padding: '5px',
             borderRadius: '15px',
             color: '#22223b',
             border: 'none',
             padding: '10px',
-            fontSize: '15px',
             fontWeight: 'bold',
             margin: '20px',
             width: '200px',

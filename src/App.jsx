@@ -19,39 +19,89 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <div className="principal" style={{ display: 'flex' }}>
-        <Routes>
-          <Route path="/" element={<DashboardPage rentals={rentals} />} />
-          <Route
-            path="/add"
-            element={<AddApartment setRentals={setRentals} />}
-          />
-          <Route
-            path="/pagesRentals/:rentalId"
-            element={<ItemDetailsPage rentals={rentals} />}
-          />
-          <Route path="/about" element={<AboutPage />} />
-          <Route
-            path="/pagesRentals"
-            element={
-              <PageRentalList rentals={rentals} setRentals={setRentals} />
-            }
-          />
-          <Route
-            path="/update/:rentalId"
-            element={
-              <UpdateApartment rentals={rentals} setRentals={setRentals} />
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+      <Routes>
+        {}
+        <Route path="*" element={<NotFoundPage />} />
 
-        <Sidebar />
-      </div>
-      <div>
-        <Footer />
-      </div>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <DashboardPage rentals={rentals} />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <AddApartment setRentals={setRentals} />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/pagesRentals/:rentalId"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <ItemDetailsPage rentals={rentals} />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <AboutPage />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/pagesRentals"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <PageRentalList rentals={rentals} setRentals={setRentals} />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/update/:rentalId"
+          element={
+            <>
+              <Navbar />
+              <div className="principal" style={{ display: 'flex' }}>
+                <UpdateApartment rentals={rentals} setRentals={setRentals} />
+                <Sidebar />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </>
   )
 }

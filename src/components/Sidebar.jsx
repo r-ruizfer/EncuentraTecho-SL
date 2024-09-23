@@ -7,7 +7,6 @@ function Sidebar() {
         <button
           style={{
             backgroundColor: ' #c9ada7',
-            padding: '5px',
             borderRadius: '15px',
             color: '#22223b',
             border: 'none',
@@ -23,7 +22,6 @@ function Sidebar() {
         <button
           style={{
             backgroundColor: ' #c9ada7',
-            padding: '5px',
             borderRadius: '15px',
             color: '#22223b',
             border: 'none',

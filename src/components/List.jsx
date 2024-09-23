@@ -1,9 +1,8 @@
 import React from 'react'
 import ItemCard from './ItemCard'
-import { Link } from 'react-router-dom'
 
 function List(props) {
-  const { rentals, setRentals } = props
+  const { rentals, setRentals, searchValue } = props
 
   return (
     <div
@@ -13,19 +12,17 @@ function List(props) {
         alignItems: 'center',
       }}
     >
-      {rentals.map((rental, i) => (
-        <>
-          
-            <ItemCard
-              key={i}
-              index={i}
-              rentals={rentals}
-              rental={rental}
-              setRentals={setRentals}
-              id ={rental.id}
-            />
-          
-        </>
+      {rentals
+      .filter(rental => rental.name.toLowerCase().includes(searchValue))
+      .map((rental, i) => (
+        <ItemCard
+          key={i}
+          index={i}
+          rentals={rentals}
+          rental={rental}
+          setRentals={setRentals}
+          id ={rental.id}
+        />
       ))}
     </div>
   )

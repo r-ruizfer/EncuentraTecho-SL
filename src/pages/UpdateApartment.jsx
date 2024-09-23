@@ -1,44 +1,41 @@
 import { useState } from 'react'
 import { useParams , useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 
 function UpdateApartment({ rentals, setRentals }) {
+
   const { rentalId } = useParams()
   const navigate = useNavigate()
   const rentalToDisplay = rentals.find((rental) => rental.id === rentalId)
   const [apartment, setApartment] = useState(rentalToDisplay)
 
-  const handleChange = (event) =>
-    setApartment({ ...apartment, [event.target.name]: event.target.value })
+  const handleChange = (event) => {
+    if (event.target.name == "picture_url") {
+      setApartment({...apartment, picture_url: { ...apartment.picture_url, url: event.target.value }})
+    } else {
+      setApartment({ ...apartment, [event.target.name]: event.target.value })
+    }
+  }
+    
 
   const handleUpdateApartment = (event) => {
     event.preventDefault()
 
     const updatedApartment = {
-      id:apartment.id,
-      picture_url: apartment.picture_url,
-      price: apartment.price,
-      name: apartment.name,
-      neighbourhood: apartment.neighbourhood,
-      city: apartment.city,
-      country: apartment.country,
-      type: apartment.type,
-      accommodates: apartment.accommodates,
-      bathrooms: apartment.bathrooms,
-      bedrooms: apartment.bedrooms,
-      description: apartment.description,
+      ...apartment,
+      picture_url: {
+        ...apartment.picture_url,
+        url: apartment.picture_url.url
+      }
     }
-    console.log(apartment.picture_url)
 
     setApartment(updatedApartment)
 
     const updatedRentals = rentals.map((rental) =>
       rental.id === apartment.id ? updatedApartment : rental
-  )
-  console.log(updatedRentals)
-  
-  setRentals(updatedRentals)
-  navigate(`/pagesRentals/${updatedApartment.id}`)
+    )
+    
+    setRentals(updatedRentals)
+    navigate(`/pagesRentals/${updatedApartment.id}`)
   }
 
   return (
@@ -147,7 +144,7 @@ function UpdateApartment({ rentals, setRentals }) {
             Picture
             <input
               onChange={handleChange}
-              value= {apartment.picture_url}
+              value= {apartment.picture_url.url}
               type="text"
               name="picture_url"
             ></input>

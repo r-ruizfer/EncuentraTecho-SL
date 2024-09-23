@@ -18,12 +18,14 @@ function Carousel(props) {
     return () => clearInterval(interval)
   }, [rentals.length])
 
-  const handleLeft = () => {
+  const handleLeft = (event) => {
+    event.preventDefault()
     const nuevoIndex = imageIndex === 0 ? rentals.length - 1 : imageIndex - 1
     setImageIndex(nuevoIndex)
   }
 
-  const handleRight = () => {
+  const handleRight = (event) => {
+    event.preventDefault()
     const nuevoIndex = imageIndex === rentals.length - 1 ? 0 : imageIndex + 1
     setImageIndex(nuevoIndex)
   }
@@ -35,7 +37,7 @@ function Carousel(props) {
       </button>
       <div className="box-carousel">
         {rentals.map((rental, i) => (
-          <Link to={`/pagesRentals/${rental.id}`}>
+          <Link to={`/pagesRentals/${rentals[imageIndex].id}`}>
             <img
               className="image-carousel"
               key={rentals[imageIndex].id}

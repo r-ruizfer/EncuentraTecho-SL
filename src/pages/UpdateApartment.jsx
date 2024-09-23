@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams , useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 function UpdateApartment({ rentals, setRentals }) {
   const { rentalId } = useParams()
-
+  const navigate = useNavigate()
   const rentalToDisplay = rentals.find((rental) => rental.id === rentalId)
   const [apartment, setApartment] = useState(rentalToDisplay)
 
@@ -15,7 +15,8 @@ function UpdateApartment({ rentals, setRentals }) {
     event.preventDefault()
 
     const updatedApartment = {
-      picture_url: { url: apartment.url },
+      id:apartment.id,
+      picture_url: apartment.picture_url,
       price: apartment.price,
       name: apartment.name,
       neighbourhood: apartment.neighbourhood,
@@ -27,20 +28,24 @@ function UpdateApartment({ rentals, setRentals }) {
       bedrooms: apartment.bedrooms,
       description: apartment.description,
     }
+    console.log(apartment.picture_url)
 
     setApartment(updatedApartment)
 
     const updatedRentals = rentals.map((rental) =>
       rental.id === apartment.id ? updatedApartment : rental
-    )
-    setRentals(updatedRentals)
+  )
+  console.log(updatedRentals)
+  
+  setRentals(updatedRentals)
+  navigate(`/pagesRentals/${updatedApartment.id}`)
   }
 
   return (
+    
     <form onSubmit={handleUpdateApartment} className="formContainer">
-      <Link to={`/pagesRentals/${rentalToDisplay.id}`}>
         <button type="submit">Update apartment</button>
-      </Link>
+      
 
       <div
         style={{ display: 'flex', backgroundColor: '#f2e9e4', height: '500px' }}
@@ -135,6 +140,16 @@ function UpdateApartment({ rentals, setRentals }) {
               value={apartment.bedrooms}
               type="number"
               name="bedrooms"
+            ></input>
+          </label>
+          
+          <label>
+            Picture
+            <input
+              onChange={handleChange}
+              value= {apartment.picture_url}
+              type="text"
+              name="picture_url"
             ></input>
           </label>
         </div>

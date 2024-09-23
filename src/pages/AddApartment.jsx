@@ -23,7 +23,7 @@ function AddApartment({ setRentals }) {
 
     const newApartment = {
       id: generateNewId(),
-      picture_url: { url: apartment.url },
+      picture_url: apartment.picture_url,
       price: apartment.price,
       name: apartment.name,
       neighbourhood: apartment.neighbourhood,
@@ -168,6 +168,17 @@ function AddApartment({ setRentals }) {
                 name="bedrooms"
               ></input>
             </label>
+
+            <label>
+            Picture:{' '}
+            <input
+              onChange={handleChange}
+              value= {apartment.picture_url}
+              type="text"
+              name="picture_url"
+            ></input>
+          </label>
+
           </div>
         </div>
         <div className="textarea">

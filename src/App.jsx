@@ -27,7 +27,7 @@ function App() {
           path="/"
           element={
             <>
-              <Navbar />
+              <Navbar  />
               <div className="principal" style={{ display: 'flex' }}>
                 <DashboardPage rentals={rentals} />
                 <Sidebar />
@@ -40,7 +40,7 @@ function App() {
           path="/add"
           element={
             <>
-              <Navbar />
+             <Navbar  />
               <div className="principal" style={{ display: 'flex' }}>
                 <AddApartment setRentals={setRentals} />
                 <Sidebar />
@@ -53,7 +53,7 @@ function App() {
           path="/pagesRentals/:rentalId"
           element={
             <>
-              <Navbar />
+             <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <ItemDetailsPage rentals={rentals} />
                 <Sidebar />
@@ -66,7 +66,7 @@ function App() {
           path="/about"
           element={
             <>
-              <Navbar />
+             <Navbar  />
               <div className="principal" style={{ display: 'flex' }}>
                 <AboutPage />
                 <Sidebar />
@@ -79,7 +79,7 @@ function App() {
           path="/pagesRentals"
           element={
             <>
-              <Navbar />
+             <Navbar  />
               <div className="principal" style={{ display: 'flex' }}>
                 <PageRentalList rentals={rentals} setRentals={setRentals} />
                 <Sidebar />
@@ -92,7 +92,7 @@ function App() {
           path="/update/:rentalId"
           element={
             <>
-              <Navbar />
+             <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <UpdateApartment rentals={rentals} setRentals={setRentals} />
                 <Sidebar />

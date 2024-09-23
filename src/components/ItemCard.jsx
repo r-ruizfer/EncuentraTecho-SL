@@ -42,7 +42,7 @@ function ItemCard(props) {
   return (
     <div style={rentalCardsStyle}>
       <Link to={`/pagesRentals/${id}`}>
-        <div style={{ display: "flex", gap: "5px" }}>
+        <div style={{ color: "#22223b", display: "flex", gap: "5px" }}>
           <img
             style={{
               border: "5px solid #4a4e69",

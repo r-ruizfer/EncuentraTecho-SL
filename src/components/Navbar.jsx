@@ -1,9 +1,11 @@
-import Icon from '../components/Icon.jsx'
-import GithubIcon from '../assets/lupa.webp'
+
 import Logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar.jsx'
+import { useState } from 'react'
 
 function Navbar() {
+
   return (
     <>
       <div className="nav-container">
@@ -64,10 +66,7 @@ function Navbar() {
             Contacto
           </h3>
         </div>
-        <div className="search">
-          <Icon src={GithubIcon} alt={'Lupa'} />
-          <input type="text" placeholder="Buscar"></input>
-        </div>
+       
       </div>
     </>
   )

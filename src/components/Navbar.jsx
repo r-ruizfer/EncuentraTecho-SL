@@ -1,11 +1,12 @@
-
 import Logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar.jsx'
 import { useState } from 'react'
+import Icon from './Icon.jsx'
+import casa from '../assets/casaIcon.png'
+import addcasa from '../assets/nuevo.png'
 
 function Navbar() {
-
   return (
     <>
       <div className="nav-container">
@@ -14,7 +15,7 @@ function Navbar() {
             style={{
               width: '120px',
               height: '120px',
-              backgroundColor: ' #c9ada7',
+              backgroundColor: ' #fdfffc',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -29,44 +30,32 @@ function Navbar() {
               />
             </Link>
           </div>
-          <Link style={{ textDecoration: 'none' }} to="/add">
-            <h3
-              style={{
-                backgroundColor: ' #c9ada7',
-                padding: '5px',
-                borderRadius: '15px',
-                color: '#22223b',
-              }}
-            >
-              Añade tu casa
-            </h3>
+          <Link
+            style={{
+              textDecoration: 'none',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            to="/add"
+          >
+            <Icon src={addcasa} atl={'casa'} />
+            <h3 className="color-text">Añade tu casa</h3>
           </Link>
 
-          <Link style={{ textDecoration: 'none' }} to="/pagesRentals">
-            <h3
-              style={{
-                backgroundColor: ' #c9ada7',
-                padding: '5px',
-                borderRadius: '15px',
-                color: '#22223b',
-                textDecoration: 'none',
-              }}
-            >
-              Casas
-            </h3>
-          </Link>
-          <h3
+          <Link
             style={{
-              backgroundColor: ' #c9ada7',
-              padding: '5px',
-              borderRadius: '15px',
-              color: '#22223b',
+              textDecoration: 'none',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
+            to="/pagesRentals"
           >
-            Contacto
-          </h3>
+            <Icon src={casa} atl={'casa'} />
+            <h3 className="color-text">Casas</h3>
+          </Link>
         </div>
-       
       </div>
     </>
   )

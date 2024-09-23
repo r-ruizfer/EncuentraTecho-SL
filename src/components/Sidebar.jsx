@@ -5,10 +5,11 @@ function Sidebar() {
     <div className="sidebar-container">
       <Link to="/">
         <button
+          className="color-text-sidebar"
           style={{
-            backgroundColor: ' #c9ada7',
+            backgroundColor: ' #e15c61',
             borderRadius: '15px',
-            color: '#22223b',
+            color: '#fdfffc',
             border: 'none',
             padding: '10px',
             fontSize: '15px',
@@ -20,10 +21,11 @@ function Sidebar() {
       </Link>
       <Link to="/about">
         <button
+          className="color-text-sidebar"
           style={{
-            backgroundColor: ' #c9ada7',
+            backgroundColor: '#e15c61',
             borderRadius: '15px',
-            color: '#22223b',
+            color: '#fdfffc',
             border: 'none',
             padding: '10px',
             fontSize: '15px',

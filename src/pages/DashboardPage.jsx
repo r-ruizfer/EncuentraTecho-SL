@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Carousel from '../components/Carousel'
 import { Link } from 'react-router-dom'
+import pareja from '../assets/pareja.png'
 
 function DashboardPage({ rentals }) {
   const title = () => {
     const texto = 'Bienvenidos a Encuentra Techo'
 
     return (
-      <h1>
+      <h1 style={{ fontSize: '50px' }}>
         {texto.split('').map((letra, index) => (
           <span key={index} className="letter">
             {letra === ' ' ? '\u00A0' : letra}{' '}
@@ -20,14 +21,20 @@ function DashboardPage({ rentals }) {
   return (
     <div className="home-container">
       {title()}
-      <p>
+      <p
+        style={{
+          width: '60%',
+          fontSize: '20px',
+          fontWeight: 'bold',
+        }}
+      >
         ¿Cansado de buscar la casa perfecta y sentir que te estás volviendo
         loco? ¡No te preocupes! En Encuentra Techo con Casa Locas tenemos la
         solución para ti. Somos la inmobiliaria que no solo te ayuda a encontrar
         tu hogar, ¡sino que también te arranca una sonrisa!
       </p>
       <div className="container-sugerencias">
-        <div className="sugerencias">
+        <div className="ofrecemos">
           <h2>¿Qué ofrecemos?</h2>
           <ul>
             <li>
@@ -45,34 +52,47 @@ function DashboardPage({ rentals }) {
             </li>
           </ul>
         </div>
-
+        <Carousel rentals={rentals} />
         <div className="sugerencias">
-          <h2>¡Sugerencias para disfrutar de tu experiencia!</h2>
-          <ul>
-            <li>
-              <strong>Lleva un mapa:</strong> A veces, nuestras casas locas
-              están en lugares inesperados. ¡No querrás perderte en la búsqueda
-              del hogar de tus sueños!
-            </li>
-            <li>
-              <strong>Pregunta por las historias:</strong> Cada casa tiene su
-              propia historia, y algunas son tan locas como sus diseños.
-              ¡Pregúntanos y te sorprenderás!
-            </li>
-            <li>
-              <strong>Prepara un snack:</strong> La búsqueda puede ser
-              agotadora. Una buena galleta siempre ayuda mientras sueñas con tu
-              nueva vida en una casa con piscina de gelatina (sí, lo tenemos).
-            </li>
-            <li>
-              <strong>¡No te olvides de reír!</strong> Si no te ríes al menos
-              una vez mientras buscas tu nuevo hogar, ¡te devolvemos tu locura!
-            </li>
-          </ul>
+          <img src={pareja} alt="" />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px',
+              textAlign: 'left',
+            }}
+            px
+          >
+            <h2>¡Sugerencias para disfrutar de tu experiencia!</h2>
+            <ul>
+              <li>
+                <strong>Lleva un mapa:</strong> A veces, nuestras casas locas
+                están en lugares inesperados. ¡No querrás perderte en la
+                búsqueda del hogar de tus sueños!
+              </li>
+              <li>
+                <strong>Pregunta por las historias:</strong> Cada casa tiene su
+                propia historia, y algunas son tan locas como sus diseños.
+                ¡Pregúntanos y te sorprenderás!
+              </li>
+              <li>
+                <strong>Prepara un snack:</strong> La búsqueda puede ser
+                agotadora. Una buena galleta siempre ayuda mientras sueñas con
+                tu nueva vida en una casa con piscina de gelatina (sí, lo
+                tenemos).
+              </li>
+              <li>
+                <strong>¡No te olvides de reír!</strong> Si no te ríes al menos
+                una vez mientras buscas tu nuevo hogar, ¡te devolvemos tu
+                locura!
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <Carousel rentals={rentals} />
 
       <h2>¡Únete a la locura de encontrar tu techo perfecto!</h2>
       <p style={{ fontSize: '20px', margin: '10px 20px' }}>

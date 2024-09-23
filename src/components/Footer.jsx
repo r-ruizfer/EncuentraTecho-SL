@@ -26,10 +26,10 @@ function Footer() {
           ></iframe>
         </div>
 
-        <ul>
-          <p>Dirección</p>
-          <p>Teléfono</p>
-          <p>Email</p>
+        <ul style={{ color: '#fdfffc', fontSize: '' }}>
+          <p>Dirección: Carretera del demonio Nº666 Madrid </p>
+          <p>Teléfono: 652-625-321</p>
+          <p>Email: encutratecho@gmai.com</p>
         </ul>
       </div>
     </div>

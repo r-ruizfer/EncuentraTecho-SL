@@ -22,6 +22,116 @@ body {
   color: #020100;
   font-family: 'Ubuntu', sans-serif;
 }
+.update-button {
+  background-color: #235789;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  margin: 20px;
+  width: 200px;
+  font-size: 30px;
+}
+.mas-info-button {
+  background-color: #22223b;
+  border-radius: 15px;
+  color: #9a8c98;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px;
+  width: 100px;
+}
+.dashboard-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: left;
+}
+.navbar-links {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rental-card-image {
+  border: 5px solid #235789;
+  border-radius: 10px;
+  width: 350px;
+  height: 300px;
+}
+.rental-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+  color: #020100;
+
+  border-radius: 10px;
+  width: 600px;
+  background-color: #fdfffc;
+  color: #020100;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+.add-update-button {
+  background-color: #235789;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  margin: 20px;
+  width: 300px;
+  font-size: 30px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #fdfffc;
+}
+.about {
+  background-color: #fdfffc;
+  width: 93vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.team-member-card {
+  border: #235789 solid 3px;
+  border-radius: 15px;
+  width: 500px;
+  color: #020100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}
+.team-names {
+  border: #e15c61 solid 3px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.socials-link {
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .nav-menu {
   display: flex;
@@ -32,7 +142,7 @@ body {
 .nav-container {
   display: flex;
   flex-direction: column;
-  background-image: url('../src/assets/tejado.png');
+  background-image: url('https://viviendasana.es/wp-content/uploads/2020/11/cuanto-cuesta-reparar-un-tejado.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 100px;
@@ -124,12 +234,10 @@ body {
 }
 .description-box {
   width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 12;
-  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 20px;
+  resize: none;
 }
 
 .box-info {
@@ -146,9 +254,26 @@ body {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-color: #fdfffc;
+  background-color: #e0e8f1;
   width: 100%;
+  gap: 10px;
 }
+
+.sort-btn-container {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 15px;
+}
+
+.sort-btn {
+  background-color: #235789;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
 .formContainer {
   display: flex;
   justify-content: center;
@@ -271,13 +396,27 @@ h1:hover {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .color-text:hover {
-  color: #e15c61;
+  color: #235789;
   transform: scale(1.1);
 }
 .color-text-sidebar {
+  background-color: #e15c61;
+  border-radius: 15px;
+  color: #fdfffc;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
   color: #fdfffc;
   transition: transform 0.3s ease;
 }
 .color-text-sidebar:hover {
   transform: scale(1.1);
+}
+.list-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }

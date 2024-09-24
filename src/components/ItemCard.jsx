@@ -25,35 +25,11 @@ function ItemCard(props) {
     setRentals(clone)
   }
 
-  const rentalCardsStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '10px',
-    gap: '5px',
-    border: '5px solid #235789',
-    borderRadius: '10px',
-    width: '700px',
-    backgroundColor: ' #fdfffc',
-    color: '#020100',
-    marginBottom: '20px',
-    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-  }
-
   return (
-    <div style={rentalCardsStyle}>
-      <Link to={`/pagesRentals/${id}`}>
+    <div className="rental-cards">
+      <Link style={{ textDecoration: 'none' }} to={`/pagesRentals/${id}`}>
         <div style={{ color: '#020100', display: 'flex', gap: '5px' }}>
-          <img
-            style={{
-              border: '5px solid #235789',
-              borderRadius: '10px',
-              width: '350px',
-              height: '300px',
-            }}
-            src={url}
-            alt=" imagen rental"
-          />
+          <img className="rental-card-image" src={url} alt=" imagen rental" />
           <div>
             <h3>{name}</h3>
             <h3>
@@ -76,15 +52,6 @@ function ItemCard(props) {
       <div>
         <button
           className="color-text-sidebar"
-          style={{
-            backgroundColor: ' #e15c61',
-            borderRadius: '15px',
-            color: '#fdfffc',
-            border: 'none',
-            padding: '10px',
-            fontSize: '15px',
-            fontWeight: 'bold',
-          }}
           onClick={() => {
             handleDelete(index)
           }}

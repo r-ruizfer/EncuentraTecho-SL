@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import Carousel from '../components/Carousel'
-import { Link } from 'react-router-dom'
 import pareja from '../assets/pareja.png'
 
 function DashboardPage({ rentals }) {
@@ -55,17 +53,7 @@ function DashboardPage({ rentals }) {
         <Carousel rentals={rentals} />
         <div className="sugerencias">
           <img src={pareja} alt="" />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '20px',
-              textAlign: 'left',
-            }}
-            px
-          >
+          <div className="dashboard-text">
             <h2>¡Sugerencias para disfrutar de tu experiencia!</h2>
             <ul>
               <li>

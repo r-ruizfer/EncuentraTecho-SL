@@ -14,6 +14,10 @@ function ItemDetailsPage({ rentals }) {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center',
     },
   }
   const subtitle = useRef(null)
@@ -54,20 +58,7 @@ function ItemDetailsPage({ rentals }) {
             <p>Accommodates: {rentalToDisplay.accommodates}</p>
             <p>Bathrooms: {rentalToDisplay.bathrooms}</p>
             <p>Bedrooms: {rentalToDisplay.bedrooms}</p>
-            <button
-              style={{
-                backgroundColor: '#22223b',
-                borderRadius: '15px',
-                color: '#9a8c98',
-                border: 'none',
-                padding: '10px',
-                fontSize: '15px',
-                fontWeight: 'bold',
-                margin: '20px',
-                width: '100px',
-              }}
-              onClick={openModal}
-            >
+            <button className="mas-info-button" onClick={openModal}>
               Mas Info
             </button>
           </div>
@@ -83,29 +74,23 @@ function ItemDetailsPage({ rentals }) {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h1 ref={subtitle}>Casas</h1>
-          <p style={{ color: ' #22223b' }}>
-            Descipcion: {rentalToDisplay.description}
+          <h1 style={{ color: '#235789' }} ref={subtitle}>
+            {rentalToDisplay.name}
+          </h1>
+          <p style={{ color: '#020100', width: '50%' }}>
+            Descripción de la zona: {rentalToDisplay.space}
           </p>
-          <button onClick={closeModal}>close</button>
+          <button
+            style={{ width: '100px' }}
+            className="color-text-sidebar"
+            onClick={closeModal}
+          >
+            close
+          </button>
         </Modal>
       </div>
       <Link to={`/update/${rentalToDisplay.id}`}>
-        <button
-          style={{
-            backgroundColor: ' #c9ada7',
-            borderRadius: '15px',
-            color: '#22223b',
-            border: 'none',
-            padding: '10px',
-            fontWeight: 'bold',
-            margin: '20px',
-            width: '200px',
-            fontSize: '30px',
-          }}
-        >
-          Update
-        </button>
+        <button className="update-button">Update</button>
       </Link>
     </div>
   )

@@ -10,9 +10,7 @@ import Footer from './components/Footer.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import PageRentalList from './pages/PageRentalList.jsx'
 import rentalsData from './assets/rentals.json'
-import AddPage from './pages/AddApartment.jsx'
-import AddApartment from './pages/AddApartment.jsx'
-import UpdateApartment from './pages/UpdateApartment.jsx'
+import ApartmentForm from './components/ApartmentForm.jsx'
 
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results)
@@ -27,7 +25,7 @@ function App() {
           path="/"
           element={
             <>
-              <Navbar  />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <DashboardPage rentals={rentals} />
                 <Sidebar />
@@ -40,9 +38,13 @@ function App() {
           path="/add"
           element={
             <>
-             <Navbar  />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
-                <AddApartment setRentals={setRentals} />
+                <ApartmentForm
+                  rentals={rentals}
+                  setRentals={setRentals}
+                  isUpdate={false}
+                />
                 <Sidebar />
               </div>
               <Footer />
@@ -53,7 +55,7 @@ function App() {
           path="/pagesRentals/:rentalId"
           element={
             <>
-             <Navbar />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <ItemDetailsPage rentals={rentals} />
                 <Sidebar />
@@ -66,7 +68,7 @@ function App() {
           path="/about"
           element={
             <>
-             <Navbar  />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <AboutPage />
                 <Sidebar />
@@ -79,7 +81,7 @@ function App() {
           path="/pagesRentals"
           element={
             <>
-             <Navbar  />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
                 <PageRentalList rentals={rentals} setRentals={setRentals} />
                 <Sidebar />
@@ -92,9 +94,13 @@ function App() {
           path="/update/:rentalId"
           element={
             <>
-             <Navbar />
+              <Navbar />
               <div className="principal" style={{ display: 'flex' }}>
-                <UpdateApartment rentals={rentals} setRentals={setRentals} />
+                <ApartmentForm
+                  rentals={rentals}
+                  setRentals={setRentals}
+                  isUpdate={true}
+                />
                 <Sidebar />
               </div>
               <Footer />

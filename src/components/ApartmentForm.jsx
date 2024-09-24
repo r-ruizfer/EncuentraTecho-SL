@@ -1,72 +1,87 @@
 import { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
-function AddApartment({ setRentals }) {
-  const [apartment, setApartment] = useState({
-    url: '',
-    price: 0,
-    name: '',
-    neighbourhood: '',
-    city: '',
-    country: '',
-    type: '',
-    accommodates: 0,
-    bathrooms: 0,
-    bedrooms: 0,
-    description: '',
-  })
+function ApartmentForm({ rentals, setRentals, isUpdate }) {
+  const { rentalId } = useParams()
+  const navigate = useNavigate()
+  const rentalToDisplay = isUpdate
+    ? rentals.find((rental) => rental.id === rentalId)
+    : {
+        picture_url: { url: '' },
+        price: 0,
+        name: '',
+        neighbourhood: '',
+        city: '',
+        country: '',
+        type: '',
+        accommodates: 0,
+        bathrooms: 0,
+        bedrooms: 0,
+        description: '',
+      }
+  const [apartment, setApartment] = useState(rentalToDisplay)
 
-  const handleChange = (event) =>
-    setApartment({ ...apartment, [event.target.name]: event.target.value })
+  const handleChange = (event) => {
+    if (event.target.name == 'picture_url') {
+      setApartment({
+        ...apartment,
+        picture_url: { ...apartment.picture_url, url: event.target.value },
+      })
+    } else {
+      setApartment({ ...apartment, [event.target.name]: event.target.value })
+    }
+  }
 
-  const handleAddApartment = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
 
-    const newApartment = {
-      id: generateNewId(),
-      picture_url: apartment.picture_url,
-      price: apartment.price,
-      name: apartment.name,
-      neighbourhood: apartment.neighbourhood,
-      city: apartment.city,
-      country: apartment.country,
-      type: apartment.type,
-      accommodates: apartment.accommodates,
-      bathrooms: apartment.bathrooms,
-      bedrooms: apartment.bedrooms,
-      description: apartment.description,
+    if (isUpdate) {
+      const updatedApartment = {
+        ...apartment,
+        picture_url: {
+          ...apartment.picture_url,
+          url: apartment.picture_url.url,
+        },
+      }
+
+      setApartment(updatedApartment)
+      console.log(updatedApartment.picture_url.url)
+
+      const updatedRentals = rentals.map((rental) =>
+        rental.id === apartment.id ? updatedApartment : rental
+      )
+
+      setRentals(updatedRentals)
+      navigate(`/pagesRentals/${updatedApartment.id}`)
+    } else {
+      const newApartment = {
+        ...apartment,
+        picture_url: {
+          ...apartment.picture_url,
+          url: apartment.picture_url.url,
+        },
+        id: generateNewId(),
+      }
+
+      setRentals((current) => [newApartment, ...current])
+      navigate(`/pagesRentals/${newApartment.id}`)
     }
-    setRentals((current) => [newApartment, ...current])
   }
 
   const generateNewId = () => {
     let randomNumber = Math.floor(Math.random() * 99999999)
     return 'new' + randomNumber
   }
-
+  console.log(apartment.description)
   return (
-    <form onSubmit={handleAddApartment} className="formContainer">
-      <button
-        style={{
-          backgroundColor: ' #c9ada7',
-          borderRadius: '15px',
-          color: '',
-          border: 'none',
-          padding: '10px',
-          fontWeight: 'bold',
-          margin: '20px',
-          width: '300px',
-          fontSize: '30px',
-          border: '2px solid #22223b',
-          cursor: 'pointer',
-        }}
-        type="submit"
-      >
-        Add apartment
+    <form onSubmit={handleSubmit} className="formContainer">
+      <button className="add-update-button" type="submit">
+        {isUpdate ? 'Update ' : 'Add '}apartment
       </button>
 
       <div
         className="form"
-        style={{ backgroundColor: '#f2e9e4', height: '500px' }}
+        style={{ backgroundColor: ' #e0e8f1', height: '500px' }}
       >
         <div
           style={{
@@ -75,7 +90,7 @@ function AddApartment({ setRentals }) {
         >
           <div className="form-part">
             <label>
-              Price:{' '}
+              Price:
               <input
                 onChange={handleChange}
                 value={apartment.price}
@@ -85,7 +100,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Name:{' '}
+              Name:
               <input
                 onChange={handleChange}
                 value={apartment.name}
@@ -95,7 +110,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Neighbourhood:{' '}
+              Neighbourhood:
               <input
                 onChange={handleChange}
                 value={apartment.neighbourhood}
@@ -105,7 +120,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              City:{' '}
+              City:
               <input
                 onChange={handleChange}
                 value={apartment.city}
@@ -115,7 +130,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Country:{' '}
+              Country:
               <input
                 onChange={handleChange}
                 value={apartment.country}
@@ -130,7 +145,7 @@ function AddApartment({ setRentals }) {
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <label>
-              Type:{' '}
+              Type:
               <input
                 onChange={handleChange}
                 value={apartment.type}
@@ -140,7 +155,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Accommodates:{' '}
+              Accommodates:
               <input
                 onChange={handleChange}
                 value={apartment.accommodates}
@@ -150,7 +165,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Bathrooms:{' '}
+              Bathrooms:
               <input
                 onChange={handleChange}
                 value={apartment.bathrooms}
@@ -160,7 +175,7 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-              Bedrooms:{' '}
+              Bedrooms:
               <input
                 onChange={handleChange}
                 value={apartment.bedrooms}
@@ -170,15 +185,14 @@ function AddApartment({ setRentals }) {
             </label>
 
             <label>
-            Picture:{' '}
-            <input
-              onChange={handleChange}
-              value= {apartment.picture_url}
-              type="text"
-              name="picture_url"
-            ></input>
-          </label>
-
+              Picture:
+              <input
+                onChange={handleChange}
+                value={apartment.picture_url.url}
+                type="text"
+                name="picture_url"
+              ></input>
+            </label>
           </div>
         </div>
         <div className="textarea">
@@ -197,4 +211,4 @@ function AddApartment({ setRentals }) {
   )
 }
 
-export default AddApartment
+export default ApartmentForm

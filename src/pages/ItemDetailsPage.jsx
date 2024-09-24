@@ -73,7 +73,7 @@ function ItemDetailsPage({ rentals }) {
           </div>
         </div>
         <div className="description-box">
-          <p>Descipcion:{rentalToDisplay.description}</p>
+          <p>Description:{rentalToDisplay.description}</p>
         </div>
 
         <Modal
@@ -85,7 +85,7 @@ function ItemDetailsPage({ rentals }) {
         >
           <h1 ref={subtitle}>Casas</h1>
           <p style={{ color: ' #22223b' }}>
-            Descipcion:{rentalToDisplay.description}
+            Descipcion: {rentalToDisplay.description}
           </p>
           <button onClick={closeModal}>close</button>
         </Modal>

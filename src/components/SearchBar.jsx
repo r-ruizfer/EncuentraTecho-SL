@@ -11,7 +11,7 @@ function SearchBar({ searchValue, setSearchValue }) {
   return (
     <div style={{ display: "flex" }}>
       <Icon src={GithubIcon} alt={"Lupa"} />
-      <input
+      <input style={{color:"#020100"}}
         onChange={handleSearchChange}
         value={searchValue}
         type="text"

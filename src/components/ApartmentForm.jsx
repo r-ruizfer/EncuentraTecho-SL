@@ -13,7 +13,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
         neighbourhood: '',
         city: '',
         country: '',
-        type: '',
+        property_type: '',
         accommodates: 0,
         bathrooms: 0,
         bedrooms: 0,
@@ -76,7 +76,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
   return (
     <form onSubmit={handleSubmit} className="formContainer">
       <button className="add-update-button" type="submit">
-        {isUpdate ? 'Update ' : 'Add '}apartment
+        {isUpdate ? 'Actualizar ' : 'Añadir '}apartmento
       </button>
 
       <div
@@ -90,7 +90,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
         >
           <div className="form-part">
             <label>
-              Price:
+              Precio:
               <input
                 onChange={handleChange}
                 value={apartment.price}
@@ -100,7 +100,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Name:
+              Nombre: 
               <input
                 onChange={handleChange}
                 value={apartment.name}
@@ -110,7 +110,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Neighbourhood:
+              Barrio: 
               <input
                 onChange={handleChange}
                 value={apartment.neighbourhood}
@@ -120,7 +120,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              City:
+              Ciudad: 
               <input
                 onChange={handleChange}
                 value={apartment.city}
@@ -130,7 +130,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Country:
+              País: 
               <input
                 onChange={handleChange}
                 value={apartment.country}
@@ -145,17 +145,17 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <label>
-              Type:
+              Tipo: 
               <input
                 onChange={handleChange}
-                value={apartment.type}
+                value={apartment.property_type}
                 type="text"
-                name="type"
+                name="property_type"
               ></input>
             </label>
 
             <label>
-              Accommodates:
+              Capacidad: 
               <input
                 onChange={handleChange}
                 value={apartment.accommodates}
@@ -165,7 +165,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Bathrooms:
+              Baños: 
               <input
                 onChange={handleChange}
                 value={apartment.bathrooms}
@@ -175,7 +175,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Bedrooms:
+              Habitaciones: 
               <input
                 onChange={handleChange}
                 value={apartment.bedrooms}
@@ -185,7 +185,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
             </label>
 
             <label>
-              Picture:
+              Imagen: 
               <input
                 onChange={handleChange}
                 value={apartment.picture_url.url}
@@ -196,7 +196,7 @@ function ApartmentForm({ rentals, setRentals, isUpdate }) {
           </div>
         </div>
         <div className="textarea">
-          <label>Description</label>
+          <label>Descripción:</label>
           <textarea
             rows="4"
             cols="50"

@@ -33,7 +33,7 @@ function ItemCard(props) {
           <div>
             <h3>{name}</h3>
             <h3>
-              {city} {country}
+              {city}, {country}
             </h3>
             <div
               style={{
@@ -41,11 +41,11 @@ function ItemCard(props) {
                 flexDirection: 'column',
               }}
             >
-              <p>accomodates: {accommodates}</p>
-              <p>bathrooms: {bathrooms}</p>
-              <p>bedrooms: {bedrooms}</p>
+              <p>Capacidad: {accommodates}</p>
+              <p>Baños: {bathrooms}</p>
+              <p>Habitaciones: {bedrooms}</p>
             </div>
-            <p>Price : {price}.000 €</p>
+            <p><strong>Precio : {price}.000 €</strong></p>
           </div>
         </div>
       </Link>
@@ -56,7 +56,7 @@ function ItemCard(props) {
             handleDelete(index)
           }}
         >
-          Delete
+          Eliminar
         </button>
       </div>
     </div>

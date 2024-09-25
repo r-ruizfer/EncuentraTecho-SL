@@ -4,10 +4,9 @@ function AboutPage() {
   return (
     <div className="about">
       <p>
-        Admin dashboard for the apartment rental platform where the admin can
-        see and manage the apartments shown on the platform.
+        Panel de administración para la plataforma de alquiler de apartamentos donde el administrador puede ver y gestionar los apartamentos mostrados en la plataforma.
       </p>
-      <h2>Team Members</h2>
+      <h2>Miembros del equipo</h2>
       <div className="team-member-card">
         <TeamInfo
           name={'Javier Gascón'}

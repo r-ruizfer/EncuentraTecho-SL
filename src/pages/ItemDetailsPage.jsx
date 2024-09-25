@@ -49,22 +49,22 @@ function ItemDetailsPage({ rentals }) {
         <div style={{ width: '50%' }}>
           <h3>{rentalToDisplay.neighbourhood}</h3>
           <h4>
-            {rentalToDisplay.city}-{rentalToDisplay.country}
+            {rentalToDisplay.city}, {rentalToDisplay.country}
           </h4>
           <p>
             <strong>{rentalToDisplay.property_type}</strong>
           </p>
           <div>
-            <p>Accommodates: {rentalToDisplay.accommodates}</p>
-            <p>Bathrooms: {rentalToDisplay.bathrooms}</p>
-            <p>Bedrooms: {rentalToDisplay.bedrooms}</p>
+            <p>Capacidad: {rentalToDisplay.accommodates}</p>
+            <p>Baños: {rentalToDisplay.bathrooms}</p>
+            <p>Habitaciones: {rentalToDisplay.bedrooms}</p>
             <button className="mas-info-button" onClick={openModal}>
-              Mas Info
+              Más Info
             </button>
           </div>
         </div>
         <div className="description-box">
-          <p>Description:{rentalToDisplay.description}</p>
+          <p>{rentalToDisplay.description}</p>
         </div>
 
         <Modal
@@ -90,7 +90,7 @@ function ItemDetailsPage({ rentals }) {
         </Modal>
       </div>
       <Link to={`/update/${rentalToDisplay.id}`}>
-        <button className="update-button">Update</button>
+        <button className="update-button">Actualizar</button>
       </Link>
     </div>
   )

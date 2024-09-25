@@ -52,12 +52,14 @@ body {
   padding: 20px;
   text-align: left;
 }
+
 .navbar-links {
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .rental-card-image {
   border: 5px solid #235789;
   border-radius: 10px;
@@ -87,7 +89,7 @@ body {
   padding: 10px;
   font-weight: bold;
   margin: 20px;
-  width: 300px;
+  width: 400px;
   font-size: 30px;
   border: 2px solid white;
   cursor: pointer;
@@ -95,11 +97,12 @@ body {
 }
 .about {
   background-color: #fdfffc;
-  width: 93vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  padding-bottom: 50px;
 }
 .team-member-card {
   border: #235789 solid 3px;
@@ -135,10 +138,11 @@ body {
 
 .nav-menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 30px;
 }
+
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -155,6 +159,7 @@ body {
   align-items: center;
   margin: 50px 0;
 }
+
 .search input {
   width: 500px;
   height: 50px;
@@ -170,11 +175,11 @@ body {
 
 .home-container {
   display: flex;
-
   flex-direction: column;
   align-items: center;
-  width: 93vw;
+  width: 100vw;
   background-color: #fdfffc;
+  padding-bottom: 50px;
 }
 
 .sidebar-container {
@@ -419,4 +424,5 @@ h1:hover {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  padding-bottom: 50px;
 }

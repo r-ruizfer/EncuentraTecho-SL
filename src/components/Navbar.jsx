@@ -2,7 +2,7 @@ import Logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 import casa from '../assets/casaIcon.png'
-import addcasa from '../assets/nuevo.png'
+import addcasa from '../assets/casaAdd.png'
 
 function Navbar() {
   return (

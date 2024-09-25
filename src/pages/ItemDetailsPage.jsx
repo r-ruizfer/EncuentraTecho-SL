@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Modal from 'react-modal'
 import { useState, useRef } from 'react'
 Modal.setAppElement('#root')
+
 function ItemDetailsPage({ rentals }) {
   const [modalIsOpen, setIsOpen] = useState(false)
   const { rentalId } = useParams()
@@ -38,7 +39,7 @@ function ItemDetailsPage({ rentals }) {
     <div className="container-details">
       <div>
         <img
-          style={{ width: '1000px', marginTop: '50px', borderRadius: '15px' }}
+          style={{ width: '1000px', height: "800px", marginTop: '50px', borderRadius: '15px' }}
           src={rentalToDisplay.picture_url.url}
           alt=""
         />

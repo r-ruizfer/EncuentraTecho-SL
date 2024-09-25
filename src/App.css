@@ -419,6 +419,7 @@ h1:hover {
 .color-text-sidebar:hover {
   transform: scale(1.1);
 }
+
 .list-wrap {
   display: flex;
   justify-content: center;
